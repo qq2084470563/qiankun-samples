@@ -1,0 +1,16 @@
+{
+  "name": "qiankun-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/qq2084470563/qiankun-examples.git",
+  "author": "陈景元 <2084470563@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm-run-all --serial start:*",
+    "start:main": "cd main_service && yarn dev",
+    "start:sub-react": "cd sub-service/sub-react && yarn start"
+  },
+  "dependencies": {
+    "yarn-run-all": "^3.1.1"
+  }
+}
