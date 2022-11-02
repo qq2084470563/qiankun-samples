@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { MyRouteType } from '@/myTypes'
 import { microApps } from '@/qiankun'
 import { Main } from '@pages/Main'
-import Sub from '@pages/sub'
+import { Sub } from '@pages/sub'
 const menuRoutes: MyRouteType[] = [
 	{
 		path: '/index',
