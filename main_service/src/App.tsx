@@ -6,7 +6,7 @@ const App = defineComponent({
 	setup() {
 		return () => {
 			return (
-				<div class='App'>
+				<div class='main-App'>
 					<nav>
 						{routes.map((item) => {
 							return (

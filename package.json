@@ -6,9 +6,16 @@
   "author": "陈景元 <2084470563@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm-run-all --serial start:*",
+    "install": " npm-run-all -s install:*",
+    "install:main":"cd main_service && yarn ",
+    "install:sub-react":"cd sub-service/sub-react && yarn",
+    "install:sub-vite-react":"cd sub-service/sub-vite-react && yarn",
+    "start": "npm-run-all -p start:*",
     "start:main": "cd main_service && yarn dev",
-    "start:sub-react": "cd sub-service/sub-react && yarn start"
+    "start:sub-react": "cd sub-service/sub-react && yarn start",
+    "start:sub-vite-react": "cd sub-service/sub-vite-react && yarn dev"
+    
+   
   },
   "dependencies": {
     "yarn-run-all": "^3.1.1"

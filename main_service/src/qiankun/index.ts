@@ -23,6 +23,12 @@ const microApps = [
 		entry: '//localhost:40001',
 		activeRule: '/sub-react',
 	},
+	{
+		name: 'sub-vite-react',
+		developer: 'vite-react',
+		entry: '//localhost:40002',
+		activeRule: '/sub-vite-react',
+	},
 ]
 const apps = microApps.map((item) => {
 	return {
@@ -32,6 +38,9 @@ const apps = microApps.map((item) => {
 		props: {
 			developer: item.developer, // 下发基础路由
 			routerBase: item.activeRule, // 下发基础路由
+		},
+		configuration: {
+			strictStyleIsolation: true,
 		},
 	}
 })
