@@ -11,4 +11,7 @@ export default defineConfig({
 			'@pages/': '/src/pages/',
 		},
 	},
+	server: {
+		open: true,
+	},
 })

@@ -13,9 +13,8 @@
     "start": "npm-run-all -p start:*",
     "start:main": "cd main_service && yarn dev",
     "start:sub-react": "cd sub-service/sub-react && yarn start",
-    "start:sub-vite-react": "cd sub-service/sub-vite-react && yarn dev"
-    
-   
+    "start:sub-vite-react": "cd sub-service/sub-vite-react && yarn dev" ,
+    "build":""
   },
   "dependencies": {
     "yarn-run-all": "^3.1.1"
