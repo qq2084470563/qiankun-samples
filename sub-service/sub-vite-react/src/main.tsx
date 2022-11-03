@@ -12,6 +12,7 @@ let root: ReactDOM.Root | null = null
 
 function render(props: QiankunProps) {
 	const { container } = props
+
 	const root = ReactDOM.createRoot(
 		(container
 			? container.querySelector('#root')

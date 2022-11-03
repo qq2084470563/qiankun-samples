@@ -1,7 +1,10 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
 import { RouterView, RouterLink } from 'vue-router'
 import { routes } from './router'
+import store from './store'
 export const isLoading = ref(true)
+const ignore = computed(() => store.getGlobalState!('ignore'))
+
 const App = defineComponent({
 	setup() {
 		return () => {
@@ -21,7 +24,7 @@ const App = defineComponent({
 					<main>
 						<header>
 							<h2>你好！</h2>
-							<p>啊啊啊啊</p>
+							<p>主应用的state：子应用名称: {ignore.value}</p>
 						</header>
 						<aside>
 							<RouterView />

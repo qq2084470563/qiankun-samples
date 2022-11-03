@@ -15,7 +15,6 @@ export default ({ mode }) => {
 		],
 		server: {
 			port: 40002,
-			host: '0.0.0.0',
 			// 设置源是因为图片资源会找错位置所以通过这个让图片等资源不会找错
 			origin: '//localhost:40002',
 			cors: true,

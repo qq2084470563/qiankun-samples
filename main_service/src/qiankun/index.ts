@@ -6,6 +6,7 @@ import {
 } from 'qiankun'
 // 引入vue实例
 import { isLoading } from '@/App'
+import store from '@/store/index'
 
 /**
  * 加载动画运行
@@ -38,9 +39,7 @@ const apps = microApps.map((item) => {
 		props: {
 			developer: item.developer, // 下发基础路由
 			routerBase: item.activeRule, // 下发基础路由
-		},
-		configuration: {
-			strictStyleIsolation: true,
+			getGlobalState: store.getGlobalState,
 		},
 	}
 })
@@ -68,7 +67,11 @@ registerMicroApps(apps, {
  */
 
 // setDefaultMountApp('/sub-vite2-react')
-start()
+start({
+	sandbox: {
+		experimentalStyleIsolation: true,
+	},
+})
 
 runAfterFirstMounted(() => {
 	console.log('贾维斯开机')
