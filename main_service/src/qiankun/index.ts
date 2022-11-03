@@ -40,6 +40,7 @@ const apps = microApps.map((item) => {
 			developer: item.developer, // 下发基础路由
 			routerBase: item.activeRule, // 下发基础路由
 			getGlobalState: store.getGlobalState,
+			useAppIgnore: store.useAppIgnore,
 		},
 	}
 })
@@ -58,6 +59,7 @@ registerMicroApps(apps, {
 	afterUnmount: [
 		(app): any => {
 			console.log('贾维斯卸载 ', app.name)
+			store.useAppIgnore!('marster', 'vue@next')
 		},
 	],
 })

@@ -10,8 +10,10 @@ const initialState = reactive({
 		developer: 'vue@next',
 	},
 })
-const actions: MicroAppStateActions & { getGlobalState?: Function } =
-	initGlobalState(initialState)
+const actions: MicroAppStateActions & {
+	getGlobalState?: Function
+	useAppIgnore?: Function
+} = initGlobalState(initialState)
 // 在当前应用监听全局状态，
 actions.onGlobalStateChange((newState, prev) => {
 	// newState变更后状态，prev变更前状态
@@ -23,5 +25,14 @@ actions.onGlobalStateChange((newState, prev) => {
 // 定义一个获取state的方法下发到子应用
 actions.getGlobalState = (key?: keys) => {
 	return key ? initialState[key] : initialState
+}
+actions.useAppIgnore = (name: string, developer: string) => {
+	actions.setGlobalState &&
+		actions.setGlobalState({
+			ignore: name,
+			user: {
+				developer: developer,
+			},
+		})
 }
 export default actions

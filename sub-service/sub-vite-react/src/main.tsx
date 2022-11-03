@@ -28,6 +28,7 @@ function render(props: QiankunProps) {
 renderWithQiankun({
 	mount(props) {
 		console.log('vite-react 上线了')
+		props.useAppIgnore(props.name, props.developer)
 		root = render(props)
 	},
 	bootstrap() {
